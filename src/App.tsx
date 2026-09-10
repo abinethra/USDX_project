@@ -12,7 +12,7 @@ import { SchoolUploadPage } from './pages/SchoolUploadPage';
 import { NgoScoutingPage } from './pages/NgoScoutingPage';
 import { AuthorityDashboardPage } from './pages/AuthorityDashboardPage';
 import { GuardianConsentPage } from './pages/GuardianConsentPage';
-import { AuditLogStub } from './pages/AuditLogStub';
+import { AuditLogPage } from './pages/AuditLogPage';
 
 export default function App() {
   // Hash-synced routing
@@ -70,7 +70,7 @@ export default function App() {
         {currentPage === 'ngo-scouting' && <NgoScoutingPage onNavigate={handleNavigate} />}
         {currentPage === 'authority-dashboard' && <AuthorityDashboardPage onNavigate={handleNavigate} />}
         {currentPage === 'guardian-consent' && <GuardianConsentPage onNavigate={handleNavigate} />}
-        {currentPage === 'audit-log' && <AuditLogStub onNavigate={handleNavigate} />}
+        {currentPage === 'audit-log' && <AuditLogPage onNavigate={handleNavigate} />}
       </main>
 
       {/* Shared Footer */}
