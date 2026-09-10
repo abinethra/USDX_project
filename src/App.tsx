@@ -11,7 +11,7 @@ import { LandingPage } from './pages/LandingPage';
 import { SchoolUploadPage } from './pages/SchoolUploadPage';
 import { NgoScoutingPage } from './pages/NgoScoutingPage';
 import { AuthorityDashboardPage } from './pages/AuthorityDashboardPage';
-import { GuardianConsentStub } from './pages/GuardianConsentStub';
+import { GuardianConsentPage } from './pages/GuardianConsentPage';
 import { AuditLogStub } from './pages/AuditLogStub';
 
 export default function App() {
@@ -69,7 +69,7 @@ export default function App() {
         {currentPage === 'school-upload' && <SchoolUploadPage onNavigate={handleNavigate} />}
         {currentPage === 'ngo-scouting' && <NgoScoutingPage onNavigate={handleNavigate} />}
         {currentPage === 'authority-dashboard' && <AuthorityDashboardPage onNavigate={handleNavigate} />}
-        {currentPage === 'guardian-consent' && <GuardianConsentStub onNavigate={handleNavigate} />}
+        {currentPage === 'guardian-consent' && <GuardianConsentPage onNavigate={handleNavigate} />}
         {currentPage === 'audit-log' && <AuditLogStub onNavigate={handleNavigate} />}
       </main>
 
