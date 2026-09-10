@@ -1,0 +1,6 @@
+{
+  "name": "USDX — Unified Sports Data Exchange",
+  "description": "A consent-driven data exchange connecting schools, NGOs, sports authorities, and coaches for youth sports talent data in India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
