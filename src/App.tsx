@@ -8,7 +8,7 @@ import { RoutePage } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './pages/LandingPage';
-import { SchoolUploadStub } from './pages/SchoolUploadStub';
+import { SchoolUploadPage } from './pages/SchoolUploadPage';
 import { NgoScoutingStub } from './pages/NgoScoutingStub';
 import { AuthorityDashboardStub } from './pages/AuthorityDashboardStub';
 import { GuardianConsentStub } from './pages/GuardianConsentStub';
@@ -66,7 +66,7 @@ export default function App() {
       {/* Main Routed Content */}
       <main className="flex-1">
         {currentPage === 'home' && <LandingPage onNavigate={handleNavigate} />}
-        {currentPage === 'school-upload' && <SchoolUploadStub onNavigate={handleNavigate} />}
+        {currentPage === 'school-upload' && <SchoolUploadPage onNavigate={handleNavigate} />}
         {currentPage === 'ngo-scouting' && <NgoScoutingStub onNavigate={handleNavigate} />}
         {currentPage === 'authority-dashboard' && <AuthorityDashboardStub onNavigate={handleNavigate} />}
         {currentPage === 'guardian-consent' && <GuardianConsentStub onNavigate={handleNavigate} />}
