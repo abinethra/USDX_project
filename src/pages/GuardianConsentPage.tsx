@@ -420,7 +420,7 @@ export const GuardianConsentPage: React.FC<ScreenProps> = ({ onNavigate }) => {
         
         {/* Warm & Approachable Top Breadcrumb */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#232630]">
-          <div className="flex items-center gap-2.5 text-xs font-mono-code">
+          <div className="flex items-center gap-2.5 text-xs">
             <button
               id="guardian-back-home-btn"
               onClick={() => onNavigate('home')}
@@ -430,14 +430,14 @@ export const GuardianConsentPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               <span>Back to Portal</span>
             </button>
             <span className="text-[#4B5563]">/</span>
-            <span className="text-[#F87171] font-bold">PARENT &amp; GUARDIAN PORTAL</span>
+            <span className="text-[#F87171] font-bold uppercase tracking-wider">Parent &amp; Guardian Portal</span>
             <span className="text-[#4B5563]">/</span>
-            <span className="text-[#9CA3AF]">CHILD PRIVACY &amp; CONSENT MANAGER</span>
+            <span className="text-[#9CA3AF] uppercase tracking-wider">Consent Manager</span>
           </div>
 
-          <div className="flex items-center gap-3 text-xs font-mono-code text-[#9CA3AF]">
+          <div className="flex items-center gap-3 text-xs text-[#9CA3AF]">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#151E19] border border-emerald-500/30 text-emerald-400 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
               <span>Logged in as Sunita Verma (Mother)</span>
             </span>
             <span className="hidden sm:inline text-[#374151]">|</span>
@@ -455,9 +455,9 @@ export const GuardianConsentPage: React.FC<ScreenProps> = ({ onNavigate }) => {
 
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#25181C] border border-[#E31B23]/30 rounded-full text-xs font-mono-code text-[#FCA5A5]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#25181C] border border-[#E31B23]/30 rounded-full text-xs text-[#FCA5A5]">
                 <HeartHandshake className="w-3.5 h-3.5 text-[#E31B23]" />
-                <span>You are in 100% control of your child's data</span>
+                <span>Direct parental control over your child's sports data</span>
               </div>
 
               <h1 className="font-condensed text-3xl sm:text-4xl font-black text-white tracking-wide uppercase">
@@ -465,7 +465,7 @@ export const GuardianConsentPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               </h1>
 
               <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-                As a parent under India's Digital Personal Data Protection (DPDP) Act, you have the full legal right to decide exactly what sports data is visible to coaches and national selectors. You can turn permissions on or off at any time with a single tap.
+                As a parent under India's Digital Personal Data Protection (DPDP) Act, you decide what sports data is visible to coaches and national selectors. You can adjust permissions at any time with a single tap.
               </p>
             </div>
 
@@ -474,7 +474,7 @@ export const GuardianConsentPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               <button
                 id="emergency-freeze-btn"
                 onClick={handleToggleEmergencyFreeze}
-                className={`px-4 py-2.5 rounded text-xs font-mono-code font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                className={`px-4 py-2.5 rounded text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer ${
                   isEmergencyFrozen
                     ? 'bg-amber-500 hover:bg-amber-600 text-black shadow-lg shadow-amber-500/20'
                     : 'bg-[#2A161A] hover:bg-[#3D1A21] text-[#FCA5A5] border border-[#E31B23]/40'
@@ -496,7 +496,7 @@ export const GuardianConsentPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               <button
                 id="download-consent-cert-btn"
                 onClick={handleDownloadCertificate}
-                className="px-4 py-2.5 bg-[#1B1E28] hover:bg-[#252A38] text-white border border-[#343A4B] rounded text-xs font-mono-code flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                className="px-4 py-2.5 bg-[#1B1E28] hover:bg-[#252A38] text-white border border-[#343A4B] rounded text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5 text-[#9CA3AF]" />
                 <span>Download Consent Certificate</span>

@@ -71,8 +71,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               <span className="font-condensed text-2xl sm:text-3xl font-black uppercase tracking-wider text-white">
                 USDX
               </span>
-              <span className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono-code font-bold tracking-widest uppercase bg-[#E31B23]/20 text-[#E31B23] border border-[#E31B23]/40">
-                INDIA DPDP
+              <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase bg-[#E31B23]/20 text-[#E31B23] border border-[#E31B23]/40">
+                DPDP 2023
               </span>
             </div>
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#888888] -mt-1 hidden sm:block">
@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   : 'bg-[#121212] border-[#2E2E2E] text-[#CCCCCC] hover:border-[#E31B23] hover:text-white'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-[#E31B23] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#E31B23]" />
               <span>Demo Screens (5)</span>
               <ChevronDown className="w-4 h-4 text-[#A0A0A0]" />
             </button>
@@ -179,10 +179,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 className="absolute right-0 mt-1 w-80 bg-[#101010] border border-[#2A2A2A] shadow-2xl p-2 z-50 flex flex-col gap-1"
               >
                 <div className="px-3 py-1.5 border-b border-[#222222] flex items-center justify-between">
-                  <span className="text-[11px] font-mono-code font-bold uppercase tracking-wider text-[#888888]">
-                    Interactive Testbed
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#888888]">
+                    Interactive Views
                   </span>
-                  <span className="text-[10px] text-[#E31B23] font-bold">5 MODULES</span>
+                  <span className="text-[10px] text-[#E31B23] font-bold">5 Modules</span>
                 </div>
                 {demoLinks.map((item) => (
                   <button
@@ -203,7 +203,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                         <span className="w-1.5 h-1.5 bg-[#E31B23]" />
                       )}
                     </div>
-                    <span className="text-[11px] text-[#E31B23] font-mono-code">{item.role}</span>
+                    <span className="text-[11px] text-[#E31B23]">{item.role}</span>
                     <span className="text-[11px] text-[#777777] line-clamp-1">{item.desc}</span>
                   </button>
                 ))}

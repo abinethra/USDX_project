@@ -308,18 +308,15 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               <span>EXIT TO PORTAL HOME</span>
             </button>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#E31B23] font-bold">SCHOOL DATA UPLOAD</span>
+            <span className="text-xs text-[#E31B23] font-bold uppercase tracking-wider">School Data Upload</span>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#888888]">DATA FIDUCIARY CONSOLE</span>
+            <span className="text-xs text-[#888888] uppercase tracking-wider">Data Provider Portal</span>
           </div>
 
-          <div className="flex items-center gap-3 font-mono-code text-xs text-[#888888]">
-            <span className="inline-flex items-center gap-1.5 text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>UDISE+ VAULT SYNCED</span>
-            </span>
+          <div className="flex items-center gap-3 text-xs text-[#888888]">
+            <span className="text-[#CCCCCC]">UDISE+ Code Verified</span>
             <span className="text-[#333333]">|</span>
-            <span>DPDP ACT 2023 SEC 9 ENFORCED</span>
+            <span>DPDP Act Section 9</span>
           </div>
         </div>
 
@@ -332,10 +329,7 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
           <div className="h-[3px] w-full bg-[#E31B23]" />
 
           {/* Background sports texture */}
-          <div className="absolute inset-0 bg-sports-diagonal opacity-40 pointer-events-none" />
-          <div className="absolute -right-10 -bottom-10 text-[#181818] font-condensed text-8xl font-black select-none pointer-events-none">
-            FIP-089
-          </div>
+          <div className="absolute inset-0 bg-sports-diagonal opacity-30 pointer-events-none" />
 
           <div className="relative z-10 p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             {/* School Crest & Identity */}
@@ -351,13 +345,10 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
                   <span className="px-2 py-0.5 bg-[#E31B23] text-white text-[10px] font-condensed font-black tracking-widest uppercase">
-                    DATA FIDUCIARY (FIP)
+                    DATA PROVIDER (FIP)
                   </span>
-                  <span className="px-2 py-0.5 bg-[#1C1C1C] border border-[#2E2E2E] text-[11px] font-mono-code text-[#AAAAAA]">
-                    UDISE CODE: 07010100101
-                  </span>
-                  <span className="px-2 py-0.5 bg-[#1C1C1C] border border-[#2E2E2E] text-[11px] font-mono-code text-emerald-400">
-                    ● ACTIVE NODE
+                  <span className="px-2 py-0.5 bg-[#1C1C1C] border border-[#2E2E2E] text-[11px] text-[#AAAAAA]">
+                    UDISE: 07010100101
                   </span>
                 </div>
 
@@ -365,12 +356,12 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                   DELHI PUBLIC SPORTS ACADEMY &amp; MODEL SR. SEC. SCHOOL
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs font-mono-code text-[#888888] mt-1">
-                  <span>REGION: NORTH DELHI ZONE 04</span>
+                <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs text-[#888888] mt-1">
+                  <span>North Delhi Zone 04</span>
                   <span>•</span>
-                  <span>AFFILIATION: CBSE &amp; DELHI SPORTS BOARD</span>
+                  <span>CBSE &amp; Delhi Sports Board Affiliated</span>
                   <span>•</span>
-                  <span className="text-[#CCCCCC]">ACADEMIC SESSION: 2026–27</span>
+                  <span className="text-[#CCCCCC]">Academic Session: 2026–27</span>
                 </div>
               </div>
             </div>
@@ -378,27 +369,27 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
             {/* School Stat Card Strip (Squad-style stat block) */}
             <div className="w-full lg:w-auto grid grid-cols-2 sm:grid-cols-4 gap-2.5 shrink-0">
               <div className="bg-[#0A0A0A] border border-[#242424] p-3 text-center min-w-[100px]">
-                <span className="text-[10px] font-mono-code text-[#777777] uppercase block">TOTAL ATHLETES</span>
+                <span className="text-[10px] text-[#777777] uppercase font-medium block">TOTAL ATHLETES</span>
                 <span className="font-condensed text-3xl font-black text-white">{athletes.length}</span>
-                <span className="text-[10px] font-mono-code text-[#888888] block">In USDX Vault</span>
+                <span className="text-[10px] text-[#888888] block">In School Roster</span>
               </div>
 
               <div className="bg-[#0A0A0A] border border-[#242424] p-3 text-center min-w-[100px]">
-                <span className="text-[10px] font-mono-code text-[#777777] uppercase block">CONSENT VERIFIED</span>
+                <span className="text-[10px] text-[#777777] uppercase font-medium block">CONSENT VERIFIED</span>
                 <span className="font-condensed text-3xl font-black text-emerald-400">{verifiedCount}</span>
-                <span className="text-[10px] font-mono-code text-emerald-400/80 block">Aadhaar Signed</span>
+                <span className="text-[10px] text-emerald-400/80 block">Parent Approved</span>
               </div>
 
               <div className="bg-[#0A0A0A] border border-[#242424] p-3 text-center min-w-[100px]">
-                <span className="text-[10px] font-mono-code text-[#777777] uppercase block">PENDING VERIFICATION</span>
+                <span className="text-[10px] text-[#777777] uppercase font-medium block">PENDING VERIFICATION</span>
                 <span className="font-condensed text-3xl font-black text-amber-400">{pendingCount}</span>
-                <span className="text-[10px] font-mono-code text-amber-400/80 block">Awaiting OTP</span>
+                <span className="text-[10px] text-amber-400/80 block">Awaiting Parent OTP</span>
               </div>
 
               <div className="bg-[#0A0A0A] border border-[#242424] p-3 text-center min-w-[100px]">
-                <span className="text-[10px] font-mono-code text-[#777777] uppercase block">COMPLIANCE RATE</span>
+                <span className="text-[10px] text-[#777777] uppercase font-medium block">COMPLIANCE RATE</span>
                 <span className="font-condensed text-3xl font-black text-[#E31B23]">{consentPercentage}%</span>
-                <span className="text-[10px] font-mono-code text-[#888888] block">DPDP Sec 9</span>
+                <span className="text-[10px] text-[#888888] block">DPDP Section 9</span>
               </div>
             </div>
           </div>
@@ -438,8 +429,8 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="w-2.5 h-2.5 bg-[#E31B23]" />
-                    <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                      ENTRY CONSOLE
+                    <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                      Performance Data Entry
                     </span>
                   </div>
                   <h2 className="font-condensed text-2xl sm:text-3xl font-black uppercase tracking-wide text-white">
@@ -783,15 +774,15 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-2.5 h-2.5 bg-[#E31B23]" />
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  SQUAD ROSTER // SUBMISSION LEDGER
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  School Athlete Roster
                 </span>
               </div>
               <h3 className="font-condensed text-3xl font-black uppercase tracking-tight text-white">
                 Previously Submitted Athletes ({filteredAthletes.length} Records)
               </h3>
-              <p className="text-xs font-mono-code text-[#888888]">
-                Styled as a high-contrast athletic squad list. Hover over any row for red highlight.
+              <p className="text-xs text-[#888888]">
+                Athletic squad list for Delhi Public Sports Academy. Hover over any row for details.
               </p>
             </div>
 
@@ -836,19 +827,19 @@ export const SchoolUploadPage: React.FC<ScreenProps> = ({ onNavigate }) => {
 
           {/* Stat Table */}
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs font-mono-code border-collapse">
+            <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="bg-[#0E0E0E] text-[#888888] border-b border-[#222222] uppercase tracking-wider">
-                  <th className="py-3 px-4 w-12 text-center">BIB</th>
-                  <th className="py-3 px-4">REG ID</th>
-                  <th className="py-3 px-4">STUDENT ATHLETE</th>
-                  <th className="py-3 px-4">AGE / CAT</th>
-                  <th className="py-3 px-4">SPORT</th>
-                  <th className="py-3 px-4">EVENT / DISCIPLINE</th>
-                  <th className="py-3 px-4 text-right">BENCHMARK METRIC</th>
-                  <th className="py-3 px-4">DATE RECORDED</th>
-                  <th className="py-3 px-4">CONSENT STATUS</th>
-                  <th className="py-3 px-4 text-right">VAULT ACTION</th>
+                <tr className="bg-[#0E0E0E] text-[#888888] border-b border-[#222222] uppercase tracking-wider font-medium text-[11px]">
+                  <th className="py-3 px-4 w-12 text-center">Bib</th>
+                  <th className="py-3 px-4">Reg ID</th>
+                  <th className="py-3 px-4">Student Athlete</th>
+                  <th className="py-3 px-4">Age / Cat</th>
+                  <th className="py-3 px-4">Sport</th>
+                  <th className="py-3 px-4">Event / Discipline</th>
+                  <th className="py-3 px-4 text-right">Benchmark Metric</th>
+                  <th className="py-3 px-4">Date Recorded</th>
+                  <th className="py-3 px-4">Consent Status</th>
+                  <th className="py-3 px-4 text-right">Action</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#1C1C1C]">

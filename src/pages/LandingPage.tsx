@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from 'react';
 import { 
   Shield, 
@@ -18,183 +23,197 @@ import {
   ChevronRight,
   TrendingUp,
   FileText,
-  Key
+  Key,
+  School,
+  Compass,
+  Award
 } from 'lucide-react';
-import { RoutePage, ProblemStat, WorkflowStep, CoreComponent } from '../types';
+import { RoutePage, WorkflowStep, CoreComponent } from '../types';
 
 interface LandingPageProps {
   onNavigate: (page: RoutePage) => void;
 }
 
+interface StakeholderProblem {
+  id: string;
+  sector: string;
+  badge: string;
+  callout: string;
+  title: string;
+  description: string;
+  takeaway: string;
+}
+
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
-  const problemStats: ProblemStat[] = [
+  const stakeholderProblems: StakeholderProblem[] = [
     {
       id: 'schools',
-      code: 'SILO_01',
-      sector: 'SCHOOLS & PHYSICAL ED',
-      stat: '84%',
-      label: 'RECORDS LOST UPON GRADUATION',
-      impact: 'Annual physical fitness cards and inter-school athletic times remain trapped in physical paper ledgers, wiped out when students change schools or age out.'
+      sector: 'Schools & Physical Education',
+      badge: 'Paper Records',
+      callout: 'Physical registers',
+      title: 'Fitness cards are lost upon student graduation or transfer',
+      description: 'Annual physical fitness assessments, CBSE fitness cards, and inter-school sprint times remain trapped in physical paper ledgers. When a student changes schools or completes Class 10, their athletic history is effectively reset to zero.',
+      takeaway: 'Key gap: No portable digital record follows the student between institutions.'
     },
     {
       id: 'ngos',
-      code: 'SILO_02',
-      sector: 'GRASSROOTS FOUNDATIONS & NGOS',
-      stat: '0%',
-      label: 'HISTORICAL BENCHMARK PORTABILITY',
-      impact: 'Rural talent scouts travel to remote districts with zero access to athletes’ developmental growth curves, nutritional records, or baseline testing history.'
+      sector: 'Grassroots Academies & Scouts',
+      badge: 'Single-Day Observation',
+      callout: 'No baseline history',
+      title: 'Scouts evaluate athletes on single-day trials without longitudinal context',
+      description: 'Scouts traveling to district meets must assess talent based entirely on what happens in a 90-minute trial session. They have no access to developmental progression, past growth curves, or baseline sprint benchmarks across previous years.',
+      takeaway: 'Key risk: High potential athletes can be missed due to temporary fatigue or bad weather.'
     },
     {
       id: 'authorities',
-      code: 'SILO_03',
-      sector: 'STATE & NATIONAL AUTHORITIES',
-      stat: '92%',
-      label: 'DUPLICATE TESTING OVERHEAD',
-      impact: 'District sports councils, state associations, and national trials constantly re-test the same junior athletes due to disconnected, proprietary registry silos.'
+      sector: 'State & National Sports Bodies',
+      badge: 'Duplicate Trials',
+      callout: 'Redundant testing',
+      title: 'Athletes are repeatedly re-tested across disconnected federations',
+      description: 'District sports councils, state associations, and national talent programs run independent screening camps. Because data is not shared securely across federations, the same young athletes undergo identical physical tests multiple times each season.',
+      takeaway: 'Administrative load: High testing overhead and athlete fatigue across trial circuits.'
     },
     {
       id: 'wearables',
-      code: 'SILO_04',
-      sector: 'WEARABLES & SENSORS',
-      stat: '100%',
-      label: 'PROPRIETARY FORMAT ISOLATION',
-      impact: 'Laser timing gates, GPS harnesses, and jump mats spit isolated CSV exports into disparate cloud drives with no unified national youth schema.'
+      sector: 'Sports Sensors & Timing Hardware',
+      badge: 'Format Incompatibility',
+      callout: 'Isolated exports',
+      title: 'Electronic timing gates and jump mats output incompatible data',
+      description: 'Modern academies increasingly use laser timing gates, jump mats, and GPS monitors, but each device exports to its own proprietary CSV or local software. Without a common national data standard, the records cannot be compared across centers.',
+      takeaway: 'Technical hurdle: Valuable precision measurements remain trapped in local spreadsheets.'
     }
   ];
 
   const workflowSteps: WorkflowStep[] = [
     {
       step: '01',
-      badge: 'ONBOARDING & KYC',
-      title: 'REGISTER AS PROVIDER OR CONSUMER',
-      subtitle: 'Institutional vetting & cryptographic credentialing',
-      details: 'Schools, academies, sports foundations, and scouting clubs register as either Financial Information Provider (FIP)-equivalent data sources or Data Consumers with certified digital certificates and strict identity verification.'
+      badge: 'Institutional Onboarding',
+      title: 'Register as Provider or Consumer',
+      subtitle: 'Institutional vetting & identity verification',
+      details: 'Schools, academies, sports foundations, and scouting clubs register as either Data Providers (such as schools uploading fitness cards) or Data Consumers (such as scouts and state academies) with verified institutional credentials.'
     },
     {
       step: '02',
-      badge: 'GUARDIAN GOVERNANCE',
-      title: 'CONSENT CAPTURED & SCOPED',
-      subtitle: 'DPDP Section 9 verified parental authorization',
-      details: 'Whenever an NGO scout or state academy requests athlete benchmarks, a cryptographically signed electronic consent artifact is triggered to the parent or legal guardian specifying exact fields, evaluation purpose, and strict validity window.'
+      badge: 'Parental Consent',
+      title: 'Consent Captured & Scoped',
+      subtitle: 'DPDP Act Section 9 verified authorization',
+      details: 'Before an NGO scout or state academy can inspect an athlete’s metrics, an electronic consent request is sent to the parent or legal guardian specifying the exact fields requested, the evaluation purpose, and the validity duration.'
     },
     {
       step: '03',
-      badge: 'ZERO-TRUST EXCHANGE',
-      title: 'DATA FLOWS THROUGH RBAC + AUDIT LOG',
-      subtitle: 'Point-to-point encrypted payload with immutable receipts',
-      details: 'Raw data is transferred directly between data fiduciary and authorized consumer through an mTLS API gateway. USDX never stores raw records. Every byte queried is written to a cryptographic, tamper-evident audit ledger.'
+      badge: 'Encrypted Exchange',
+      title: 'Data Flows with Audit Logging',
+      subtitle: 'Direct encrypted transfer with non-repudiable receipts',
+      details: 'Data is transmitted securely between the school and authorized consumer. USDX never retains raw health or fitness records on central servers. Every query is logged in an access ledger for parental and regulatory review.'
     }
   ];
 
   const coreComponents: CoreComponent[] = [
     {
       id: 'schema',
-      tag: 'SPEC-01',
-      title: 'STANDARDIZED ATHLETE SCHEMA',
-      description: 'A unified Indian ontology defining anthropometrics (height, wing span), physical benchmarks (beep test, 30m sprint, counter-movement jump), and verified age records.',
-      specCode: 'USDX_SCHEMA_v1.4'
+      tag: 'Data Standard',
+      title: 'Standardized Athlete Schema',
+      description: 'A unified Indian youth sports data definition covering anthropometrics (height, wing span), physical fitness benchmarks (beep test, 30m sprint, vertical jump), and verified school records.',
+      specCode: 'Youth Sports Schema v1.4'
     },
     {
       id: 'consent',
-      tag: 'SPEC-02',
-      title: 'CONSENT & IDENTITY LAYER',
-      description: 'Analogous to India’s Account Aggregator (AA) framework. Machine-readable electronic consent artifacts signed via Aadhaar/DigiLocker OTP with guardian verification.',
-      specCode: 'AA_CHILD_CONSENT_2023'
+      tag: 'Consent Layer',
+      title: 'Parental Consent Manager',
+      description: 'Modeled after India’s Account Aggregator architecture, providing structured electronic consent artifacts signed by parents or guardians with granular field-level permissions.',
+      specCode: 'Consent Manager Specification'
     },
     {
       id: 'rbac',
-      tag: 'SPEC-03',
-      title: 'ROLE-BASED ACCESS CONTROL (RBAC)',
-      description: 'Attribute-based authorization matrix ensuring scouts, medical teams, and school principals only inspect the granular telemetry tiers they are explicitly cleared for.',
-      specCode: 'POLICY_RBAC_STRICT'
+      tag: 'Access Control',
+      title: 'Role-Based Access Control',
+      description: 'Attribute-based authorization ensuring scouts, coaches, and sports authorities can only view the data tiers they are explicitly authorized to access.',
+      specCode: 'Access Control Matrix'
     },
     {
       id: 'gateway',
-      tag: 'SPEC-04',
-      title: 'HIGH-THROUGHPUT API GATEWAY',
-      description: 'Federated microservices gateway orchestrating point-to-point data retrieval between school management portals, wearable SDKs, and scouting dashboards.',
-      specCode: 'mTLS_FEDERATED_ROUTER'
+      tag: 'Data Gateway',
+      title: 'Federated API Gateway',
+      description: 'A lightweight routing gateway coordinating point-to-point data retrieval between school portals, academy systems, and scouting applications without centralized data hoarding.',
+      specCode: 'Federated Gateway Interface'
     },
     {
       id: 'audit',
-      tag: 'SPEC-05',
-      title: 'IMMUTABLE AUDIT LOGGING',
-      description: 'Tamper-evident SHA-256 Merkle logging recording every access grant, data inspection, and consent revocation to guarantee non-repudiation under Indian law.',
-      specCode: 'CRYPT_LEDGER_CHAIN'
+      tag: 'Compliance',
+      title: 'Access Audit Ledger',
+      description: 'An immutable, timestamped record of every consent grant, data access query, and consent revocation to provide full transparency under the DPDP Act 2023.',
+      specCode: 'Audit Ledger Specification'
     }
   ];
 
   const demoScreensOverview = [
     {
       id: 'school-upload' as RoutePage,
-      title: '01. School Upload Portal',
-      role: 'Data Fiduciary (FIP)',
+      title: 'School Data Upload',
+      role: 'Data Provider (School)',
       description: 'Bulk CSV athlete vitals upload, UDISE+ validation, and fitness test baseline certification.',
       icon: FileSpreadsheet,
-      badge: 'PROVIDER VIEW'
+      badge: 'Provider View'
     },
     {
       id: 'ngo-scouting' as RoutePage,
-      title: '02. NGO Scouting View',
-      role: 'Data Consumer (FIU)',
+      title: 'NGO Scouting View',
+      role: 'Data Consumer (Scout / NGO)',
       description: 'Consent-gated search by sprint speed, vertical jump, age bracket, and district talent index.',
       icon: ScanEye,
-      badge: 'CONSUMER VIEW'
+      badge: 'Consumer View'
     },
     {
       id: 'authority-dashboard' as RoutePage,
-      title: '03. Coach & Authority Hub',
-      role: 'Sports Authority / Khelo India',
+      title: 'Coach & Sports Authority',
+      role: 'State Authority / National Federation',
       description: 'State talent pipeline analytics, district developmental benchmarks, and squad cohort tracking.',
       icon: TrendingUp,
-      badge: 'ANALYTICS VIEW'
+      badge: 'Analytics View'
     },
     {
       id: 'guardian-consent' as RoutePage,
-      title: '04. Guardian Consent Portal',
+      title: 'Guardian Consent Portal',
       role: 'Parent / Legal Guardian',
-      description: 'DPDP-compliant consent authorization dashboard, purpose scoping, and 1-click revocation.',
+      description: 'DPDP-compliant consent authorization dashboard, purpose scoping, and instant access control.',
       icon: Key,
-      badge: 'CONSENT LAYER'
+      badge: 'Consent View'
     },
     {
       id: 'audit-log' as RoutePage,
-      title: '05. Cryptographic Audit Ledger',
-      role: 'Regulatory & Compliance Officer',
-      description: 'Real-time tamper-evident cryptographic event stream verifying DPDP Act compliance.',
+      title: 'Data Access Audit Log',
+      role: 'Auditor & Compliance Officer',
+      description: 'Chronological access record tracking who viewed what athlete data, field details, and detected anomalies.',
       icon: FileText,
-      badge: 'AUDIT / COMPLIANCE'
+      badge: 'Compliance View'
     }
   ];
 
   return (
     <div id="landing-page" className="min-h-screen bg-[#0A0A0A] text-white">
-      {/* 1. HERO SECTION: Large background area, bold condensed headline, sports club dashboard styling */}
+      {/* 1. HERO SECTION */}
       <section 
         id="hero-section"
         className="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden border-b border-[#222222]"
       >
-        {/* Dark sports background grid with subtle crimson glow */}
         <div className="absolute inset-0 bg-sports-grid pointer-events-none opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent pointer-events-none" />
         <div className="absolute top-0 right-1/4 w-[600px] h-[500px] bg-[#E31B23]/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute -left-20 top-40 w-96 h-96 bg-[#E31B23]/5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Top Live Telemetry Bar */}
-          <div className="inline-flex items-center gap-3 px-3 py-1.5 bg-[#121212] border border-[#2B2B2B] text-xs font-mono-code text-[#CCCCCC] mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#E31B23] animate-pulse" />
-            <span className="text-[#E31B23] font-bold">USDX PROTOCOL</span>
+          
+          {/* Top Grounded Notice Bar */}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#141414] border border-[#2B2B2B] text-xs text-[#CCCCCC] mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#E31B23]" />
+            <span className="text-white font-medium">Digital Personal Data Protection Act 2023</span>
             <span className="text-[#555555]">|</span>
-            <span>INDIA DPDP ACT 2023 COMPLIANT</span>
-            <span className="hidden sm:inline text-[#555555]">|</span>
-            <span className="hidden sm:inline text-[#888888]">FEDERATED TALENT INFRASTRUCTURE</span>
+            <span className="text-[#999999]">Federated Youth Sports Data Architecture</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
-              {/* Bold Condensed Headline */}
               <h1 
                 id="hero-main-headline"
                 className="font-condensed text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.9] text-white"
@@ -206,25 +225,23 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 </span>
               </h1>
 
-              {/* Subheading */}
               <p 
                 id="hero-subheading"
                 className="text-base sm:text-lg text-[#A6A6A6] leading-relaxed max-w-2xl font-normal"
               >
                 USDX is a consent-driven sports data exchange connecting schools, grassroots NGOs, 
-                sports authorities, and coaches. Built on the architectural principles of India&apos;s 
-                <strong className="text-white font-semibold"> Account Aggregator (AA) framework</strong>, 
-                applied strictly to youth athletics and talent development.
+                sports authorities, and coaches. Modeled after India&apos;s 
+                <strong className="text-white font-semibold"> Account Aggregator framework</strong>, 
+                it establishes a unified digital record for young athletes while giving parents full control over their children&apos;s data.
               </p>
 
-              {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   id="hero-cta-see-demo"
                   onClick={() => onNavigate('school-upload')}
                   className="px-8 py-4 bg-[#E31B23] hover:bg-[#C9131A] text-white font-condensed font-black uppercase tracking-wider text-xl transition-all active:scale-95 cursor-pointer shadow-xl shadow-[#E31B23]/25 flex items-center gap-3 border border-[#FF3B44]/40"
                 >
-                  <span>See the Demo</span>
+                  <span>Explore Interactive Demo</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
 
@@ -237,91 +254,98 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 </a>
               </div>
 
-              {/* Quick Architectural Trust Pillars */}
-              <div className="pt-4 grid grid-cols-3 gap-3 border-t border-[#1F1F1F]">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-[#E31B23]" />
-                  <span className="text-xs font-mono-code text-[#999999] uppercase">Guardian Consent</span>
+              {/* Core Governance Principles */}
+              <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#1F1F1F] text-xs text-[#999999]">
+                <div className="flex items-center gap-2.5">
+                  <Shield className="w-4 h-4 text-[#E31B23] shrink-0" />
+                  <span><strong>Parental Consent:</strong> DPDP Section 9 verified authorization</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Lock className="w-4 h-4 text-[#E31B23]" />
-                  <span className="text-xs font-mono-code text-[#999999] uppercase">Zero Raw Storage</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-[#E31B23]" />
-                  <span className="text-xs font-mono-code text-[#999999] uppercase">mTLS Federated</span>
+                <div className="flex items-center gap-2.5">
+                  <Lock className="w-4 h-4 text-[#E31B23] shrink-0" />
+                  <span><strong>Federated Architecture:</strong> Zero centralized health data storage</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Graphic Card: Sports Club Digital Command Telemetry */}
+            {/* Right Hero Graphic Card: Exchange Architecture Overview */}
             <div className="lg:col-span-5">
-              <div className="bg-[#121212] border-2 border-[#242424] p-5 relative shadow-2xl">
-                {/* Sports Club Tag Accent */}
-                <div className="absolute top-0 right-0 bg-[#E31B23] text-white px-3 py-1 text-[11px] font-condensed font-black uppercase tracking-widest">
-                  LIVE EXCHANGE PROTOCOL
-                </div>
-
-                {/* Dashboard Status Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-[#222222]">
+              <div className="bg-[#121212] border-2 border-[#262626] p-6 relative shadow-2xl space-y-5">
+                
+                <div className="flex items-center justify-between pb-3 border-b border-[#222222]">
                   <div>
-                    <span className="text-[10px] font-mono-code text-[#888888] uppercase block">EXCHANGE ID</span>
-                    <span className="font-condensed text-xl font-bold uppercase text-white tracking-wide">
-                      USDX // IN-TALENT-GRID
+                    <span className="text-xs uppercase tracking-wider text-[#888888] font-bold block">Architecture Model</span>
+                    <span className="font-condensed text-xl font-bold uppercase text-white">
+                      Unified Sports Data Exchange
                     </span>
                   </div>
-                  <div className="text-right">
-                    <span className="text-[10px] font-mono-code text-emerald-400 font-bold block">● STATUS: OPERATIONAL</span>
-                    <span className="text-xs font-mono-code text-[#777777]">DPDP v1.2</span>
-                  </div>
+                  <span className="px-2.5 py-1 bg-[#1A1A1A] border border-[#333333] text-xs text-[#CCCCCC]">
+                    DPDP Compliant
+                  </span>
                 </div>
 
-                {/* Simulated Exchange Node Metrics */}
-                <div className="grid grid-cols-2 gap-3 my-4">
-                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E]">
-                    <span className="text-[10px] font-mono-code text-[#888888] uppercase block">REGISTERED SCHOOLS</span>
-                    <span className="font-condensed text-3xl font-black text-white">4,812</span>
-                    <span className="text-[10px] text-emerald-400 font-mono-code block mt-0.5">UDISE+ Linked</span>
+                {/* 4 Connected Participant Roles */}
+                <div className="space-y-2.5">
+                  
+                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E] flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 mt-0.5">
+                      <School className="w-4 h-4 text-[#E31B23]" />
+                    </div>
+                    <div>
+                      <span className="font-condensed text-sm font-bold uppercase text-white block">
+                        1. Schools &amp; Academies (Data Providers)
+                      </span>
+                      <p className="text-xs text-[#888888] leading-normal">
+                        Upload annual physical fitness metrics linked to verified UDISE school codes.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E]">
-                    <span className="text-[10px] font-mono-code text-[#888888] uppercase block">VERIFIED ATHLETES</span>
-                    <span className="font-condensed text-3xl font-black text-[#E31B23]">184,290</span>
-                    <span className="text-[10px] text-[#A0A0A0] font-mono-code block mt-0.5">Aadhaar Tokenized</span>
+
+                  <div className="bg-[#1A1314] p-3 border border-[#E31B23]/40 flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-[#2A1517] border border-[#E31B23] flex items-center justify-center shrink-0 mt-0.5">
+                      <Key className="w-4 h-4 text-[#E31B23]" />
+                    </div>
+                    <div>
+                      <span className="font-condensed text-sm font-bold uppercase text-[#F87171] block">
+                        2. Parental Consent Gate
+                      </span>
+                      <p className="text-xs text-[#C2A3A6] leading-normal">
+                        Parents approve or revoke visibility before any scout or coach can view child records.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E]">
-                    <span className="text-[10px] font-mono-code text-[#888888] uppercase block">ACTIVE CONSENTS</span>
-                    <span className="font-condensed text-3xl font-black text-white">99.4%</span>
-                    <span className="text-[10px] text-[#888888] font-mono-code block mt-0.5">Guardian Signed</span>
+
+                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E] flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 mt-0.5">
+                      <Compass className="w-4 h-4 text-[#E31B23]" />
+                    </div>
+                    <div>
+                      <span className="font-condensed text-sm font-bold uppercase text-white block">
+                        3. Scouts &amp; Grassroots NGOs (Consumers)
+                      </span>
+                      <p className="text-xs text-[#888888] leading-normal">
+                        Discover talent using consented benchmarks (speed, endurance, jump) without seeing private contact details.
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E]">
-                    <span className="text-[10px] font-mono-code text-[#888888] uppercase block">SCOUTING QUERIES</span>
-                    <span className="font-condensed text-3xl font-black text-white">62.8K</span>
-                    <span className="text-[10px] text-[#888888] font-mono-code block mt-0.5">Audited & Sealed</span>
+
+                  <div className="bg-[#0D0D0D] p-3 border border-[#1E1E1E] flex items-start gap-3">
+                    <div className="w-8 h-8 rounded bg-[#161616] border border-[#2D2D2D] flex items-center justify-center shrink-0 mt-0.5">
+                      <Award className="w-4 h-4 text-[#E31B23]" />
+                    </div>
+                    <div>
+                      <span className="font-condensed text-sm font-bold uppercase text-white block">
+                        4. Sports Authorities &amp; Coaches
+                      </span>
+                      <p className="text-xs text-[#888888] leading-normal">
+                        Analyze district talent distribution and shortlist promising athletes for Khelo India national camps.
+                      </p>
+                    </div>
                   </div>
+
                 </div>
 
-                {/* Simulated Live Packet Stream */}
-                <div className="bg-[#0A0A0A] p-3 border border-[#1F1F1F] font-mono-code text-[11px] space-y-1.5">
-                  <div className="text-[#888888] flex items-center justify-between border-b border-[#1A1A1A] pb-1 text-[10px]">
-                    <span>RECENT EXCHANGE TRANSACTION</span>
-                    <span className="text-emerald-400">VERIFIED 200 OK</span>
-                  </div>
-                  <div className="text-[#C0C0C0] flex items-center justify-between">
-                    <span className="text-white font-bold">REQ_7419</span>
-                    <span className="text-[#E31B23]">FIP: DAV_MODEL_SCHOOL</span>
-                  </div>
-                  <div className="text-[#888888] text-[10px]">
-                    CONSUMER: OLYMPIC_GOLD_QUEST_SCOUT // CONSENT: GRANTED
-                  </div>
-                  <div className="text-[#666666] text-[10px] flex items-center justify-between">
-                    <span>PAYLOAD: 30m_SPRINT, V_JUMP</span>
-                    <span>HASH: 0x8f3c...1e9b</span>
-                  </div>
-                </div>
-
-                {/* Card Action */}
-                <div className="mt-4 pt-3 border-t border-[#222222] flex items-center justify-between">
-                  <span className="text-xs font-mono-code text-[#888888]">SELECT DEMO VIEW BELOW</span>
+                <div className="pt-3 border-t border-[#222222] flex items-center justify-between text-xs">
+                  <span className="text-[#777777]">Explore the live testbed</span>
                   <button
                     onClick={() => onNavigate('ngo-scouting')}
                     className="text-xs font-condensed uppercase font-bold text-[#E31B23] hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
@@ -330,110 +354,106 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. PROBLEM STRIP: 4 stat-style cards showing the fragmentation problem (schools, NGOs, state authorities, wearables - each siloed) */}
+      {/* 2. PROBLEM SECTION: Distinct, varied cards without repeated tags or taxonomy numbering */}
       <section 
         id="problem-section" 
         className="py-16 sm:py-24 bg-[#0D0D0D] border-b border-[#222222] relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
+          
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#222222] gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-3 h-3 bg-[#E31B23]"></span>
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  ECOSYSTEM DIAGNOSTIC // 4 SILOS
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  Ecosystem Challenges
                 </span>
               </div>
               <h2 className="font-condensed text-4xl sm:text-5xl font-black uppercase tracking-tight text-white">
-                THE FRAGMENTATION CRISIS
+                The Fragmentation Problem
               </h2>
             </div>
-            <p className="text-sm text-[#888888] max-w-md font-mono-code">
-              Youth sports in India generates massive data daily. None of it talks to each other. 
-              Athletes start from zero at every trial.
+            <p className="text-sm text-[#888888] max-w-md">
+              Indian schools, academies, and scouts generate performance data daily. 
+              Because systems operate in isolation, young athletes lose their track record at every transition.
             </p>
           </div>
 
-          {/* 4 Stat-Style Team Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {problemStats.map((item) => (
+          {/* 4 Varied Problem Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {stakeholderProblems.map((item, idx) => (
               <div
                 key={item.id}
                 id={`problem-card-${item.id}`}
                 className="bg-[#121212] border border-[#242424] hover:border-[#E31B23] transition-all p-6 relative group flex flex-col justify-between"
               >
-                {/* Top Corner Red Line Indicator */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#222222] group-hover:bg-[#E31B23] transition-colors" />
 
-                <div>
-                  <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-3">
-                    <span>{item.code}</span>
-                    <span className="text-[#E31B23] font-bold">SILOED</span>
-                  </div>
-
-                  <span className="text-xs font-condensed uppercase font-bold tracking-wider text-[#A0A0A0] block">
-                    {item.sector}
-                  </span>
-
-                  {/* Big stat number in card */}
-                  <div className="my-3">
-                    <span className="font-condensed text-6xl font-black tracking-tight text-white group-hover:text-[#E31B23] transition-colors">
-                      {item.stat}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-xs text-[#777777]">
+                    <span className="text-white font-medium">{item.sector}</span>
+                    <span className="text-[11px] px-2 py-0.5 bg-[#181818] border border-[#282828] text-[#AAAAAA]">
+                      {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-condensed text-lg font-bold uppercase tracking-wide text-white mb-2 leading-tight">
-                    {item.label}
-                  </h3>
+                  <div className="pt-1">
+                    <span className="text-xs uppercase font-bold tracking-wider text-[#E31B23] block">
+                      {item.callout}
+                    </span>
+                    <h3 className="font-condensed text-xl font-bold uppercase tracking-wide text-white mt-1 leading-snug">
+                      {item.title}
+                    </h3>
+                  </div>
 
-                  <p className="text-xs text-[#8E8E8E] leading-relaxed">
-                    {item.impact}
+                  <p className="text-xs text-[#8E8E8E] leading-relaxed pt-1">
+                    {item.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-[11px] font-mono-code text-[#666666]">
-                  <span>IMPACT: TALENT DRAIN</span>
-                  <AlertTriangle className="w-3.5 h-3.5 text-[#E31B23]" />
+                <div className="mt-6 pt-4 border-t border-[#1C1C1C] text-xs text-[#CCCCCC] flex items-start gap-2">
+                  <span className="text-[#E31B23] font-bold shrink-0">→</span>
+                  <span className="text-[11px] text-[#A0A0A0] leading-tight">{item.takeaway}</span>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 3. HOW IT WORKS: 3-step horizontal flow as bold numbered panels */}
+      {/* 3. HOW IT WORKS: 3-step horizontal flow */}
       <section 
         id="how-it-works-section" 
         className="py-16 sm:py-24 bg-[#0A0A0A] border-b border-[#222222] relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
+          
           <div className="mb-12 pb-4 border-b border-[#222222] flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-3 h-3 bg-[#E31B23]"></span>
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  CONSENT-BASED ARCHITECTURE
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  Consent Architecture
                 </span>
               </div>
               <h2 className="font-condensed text-4xl sm:text-5xl font-black uppercase tracking-tight text-white">
-                HOW USDX WORKS
+                How USDX Works
               </h2>
             </div>
-            <p className="text-sm text-[#888888] max-w-md font-mono-code">
-              Inspired by RBI&apos;s Account Aggregator model: Data flows only when verified 
-              by guardian consent, strictly for declared purposes.
+            <p className="text-sm text-[#888888] max-w-md">
+              Inspired by the Account Aggregator model: Data flows only when verified 
+              by parental consent, strictly for declared scouting and selection purposes.
             </p>
           </div>
 
-          {/* 3-Step Horizontal Flow: Bold Numbered Panels */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative">
             {workflowSteps.map((step, idx) => (
               <div
@@ -441,32 +461,33 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 id={`workflow-step-${step.step}`}
                 className="bg-[#121212] border border-[#242424] hover:border-[#E31B23] p-7 transition-all relative group flex flex-col justify-between"
               >
-                {/* Big Step Number on Background */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-condensed text-6xl font-black text-[#262626] group-hover:text-[#E31B23] transition-colors leading-none">
-                    {step.step}
-                  </span>
-                  <span className="px-2 py-0.5 bg-[#1C1C1C] border border-[#2E2E2E] text-[10px] font-mono-code font-bold uppercase tracking-wider text-[#CCCCCC]">
-                    {step.badge}
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  <h3 className="font-condensed text-2xl font-black uppercase tracking-wide text-white leading-tight">
-                    {step.title}
-                  </h3>
-                  <div className="text-xs font-mono-code text-[#E31B23] uppercase">
-                    {step.subtitle}
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-condensed text-6xl font-black text-[#262626] group-hover:text-[#E31B23] transition-colors leading-none">
+                      {step.step}
+                    </span>
+                    <span className="px-2.5 py-1 bg-[#1C1C1C] border border-[#2E2E2E] text-xs font-medium text-[#CCCCCC]">
+                      {step.badge}
+                    </span>
                   </div>
-                  <p className="text-sm text-[#8E8E8E] leading-relaxed pt-1">
-                    {step.details}
-                  </p>
+
+                  <div className="space-y-2">
+                    <h3 className="font-condensed text-2xl font-black uppercase tracking-wide text-white leading-tight">
+                      {step.title}
+                    </h3>
+                    <div className="text-xs text-[#E31B23] font-medium">
+                      {step.subtitle}
+                    </div>
+                    <p className="text-sm text-[#8E8E8E] leading-relaxed pt-2">
+                      {step.details}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-xs font-mono-code text-[#777777]">
-                  <span>STEP {idx + 1} OF 3</span>
+                <div className="mt-8 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-xs text-[#777777]">
+                  <span>Phase {idx + 1} of 3</span>
                   <span className="text-white group-hover:text-[#E31B23] transition-colors">
-                    {idx < 2 ? 'FLOW CONTINUES →' : 'SEALED PROTOCOL ✓'}
+                    {idx < 2 ? 'Next step →' : 'Verified workflow'}
                   </span>
                 </div>
               </div>
@@ -474,51 +495,50 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Architecture Analogy Banner */}
-          <div className="mt-8 p-4 bg-[#111111] border border-[#262626] flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-[#181818] border border-[#E31B23] flex items-center justify-center shrink-0">
+          <div className="mt-8 p-5 bg-[#111111] border border-[#262626] flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <div className="w-9 h-9 bg-[#181818] border border-[#E31B23] flex items-center justify-center shrink-0">
                 <Layers className="w-4 h-4 text-[#E31B23]" />
               </div>
-              <p className="text-xs text-[#999999]">
-                <strong className="text-white font-mono-code">ACCOUNT AGGREGATOR ANALOGY:</strong> Schools & Academies act as Financial Information Providers (FIPs). Scouting NGOs & State Boards act as Financial Information Users (FIUs). USDX acts as the zero-knowledge Consent Manager.
+              <p className="text-xs text-[#999999] leading-relaxed">
+                <strong className="text-white">Account Aggregator Analogy:</strong> Schools act as Data Providers. Scouting NGOs and State Federations act as Data Consumers. USDX serves as the consent and access-control gateway.
               </p>
             </div>
             <button
               onClick={() => onNavigate('guardian-consent')}
               className="shrink-0 px-4 py-2 bg-[#1A1A1A] hover:bg-[#E31B23] text-white font-condensed font-bold uppercase tracking-wider text-xs border border-[#333333] transition-colors cursor-pointer"
             >
-              Test Consent Simulation
+              Open Guardian Portal
             </button>
           </div>
         </div>
       </section>
 
-      {/* 4. CORE COMPONENTS GRID: 5 cards (Standardized Schema, Consent & Identity, RBAC, API Gateway, Audit Logging) */}
+      {/* 4. CORE PLATFORM COMPONENTS */}
       <section 
         id="components-section" 
         className="py-16 sm:py-24 bg-[#0D0D0D] border-b border-[#222222] relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
+          
           <div className="mb-12 pb-4 border-b border-[#222222] flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-3 h-3 bg-[#E31B23]"></span>
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  TECHNICAL INFRASTRUCTURE
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  Core Components
                 </span>
               </div>
               <h2 className="font-condensed text-4xl sm:text-5xl font-black uppercase tracking-tight text-white">
-                5 CORE PLATFORM COMPONENTS
+                5 Platform Components
               </h2>
             </div>
-            <p className="text-sm text-[#888888] max-w-md font-mono-code">
-              Hardened, modular data plumbing engineered for extreme scale across India&apos;s 
-              28 states and Union Territories.
+            <p className="text-sm text-[#888888] max-w-md">
+              A modular architecture designed for interoperability between school software, 
+              scouting platforms, and national selection trials.
             </p>
           </div>
 
-          {/* 5 Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {coreComponents.map((comp, index) => {
               const icons = [Database, Shield, Lock, Cpu, FileCheck2];
@@ -537,7 +557,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                       <div className="w-10 h-10 bg-[#0A0A0A] border border-[#242424] group-hover:border-[#E31B23] flex items-center justify-center transition-colors">
                         <IconComp className="w-5 h-5 text-[#E31B23]" />
                       </div>
-                      <span className="font-mono-code text-[11px] text-[#777777] bg-[#171717] px-2 py-0.5 border border-[#282828]">
+                      <span className="text-xs text-[#888888] bg-[#171717] px-2.5 py-1 border border-[#282828]">
                         {comp.specCode}
                       </span>
                     </div>
@@ -551,9 +571,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-xs font-mono-code text-[#777777]">
-                    <span className="text-[#E31B23]">{comp.tag}</span>
-                    <span className="text-white group-hover:text-[#E31B23] transition-colors">SPECIFICATION READY</span>
+                  <div className="mt-6 pt-4 border-t border-[#1C1C1C] flex items-center justify-between text-xs text-[#777777]">
+                    <span className="text-[#E31B23] font-medium">{comp.tag}</span>
+                    <span className="text-white group-hover:text-[#E31B23] transition-colors">Specification Layer</span>
                   </div>
                 </div>
               );
@@ -562,18 +582,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 5. COMPLIANCE STRIP: DPDP Act 2023 children's-data provisions as a dark trust/legitimacy band */}
+      {/* 5. STATUTORY COMPLIANCE: DPDP ACT 2023 */}
       <section 
         id="compliance-section" 
         className="py-14 bg-[#0A0A0A] border-b border-[#222222] relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#121212] border-2 border-[#E31B23]/40 p-8 lg:p-10 relative">
-            {/* Background watermark */}
-            <div className="absolute right-4 bottom-2 text-[#181818] font-condensed text-9xl font-black select-none pointer-events-none uppercase">
-              DPDP 2023
-            </div>
-
+            
             <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 bg-[#181818] border border-[#E31B23] flex items-center justify-center shrink-0">
@@ -582,16 +598,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <span className="px-2 py-0.5 bg-[#E31B23] text-white text-[10px] font-condensed font-black tracking-widest uppercase">
-                      STATUTORY COMPLIANCE
+                      Statutory Compliance
                     </span>
-                    <span className="text-xs font-mono-code text-[#A0A0A0]">SECTION 9 OBLIGATIONS</span>
+                    <span className="text-xs text-[#A0A0A0]">Section 9 Provisions</span>
                   </div>
                   <h3 className="font-condensed text-3xl font-black uppercase tracking-wide text-white">
-                    DIGITAL PERSONAL DATA PROTECTION (DPDP) ACT 2023
+                    Digital Personal Data Protection (DPDP) Act 2023
                   </h3>
                   <p className="text-sm text-[#A0A0A0] max-w-3xl leading-relaxed">
-                    Under Indian law, children&apos;s personal sports metrics are classified as sensitive personal data. 
-                    USDX enforces verifiable parental consent prior to processing, strictly forbids behavioral profiling or tracking of minors, guarantees immutable revocation rights, and operates on zero centralized raw data storage.
+                    Under Indian law, children&apos;s physical and athletic records are classified as sensitive personal data. 
+                    USDX enforces verifiable parental consent prior to processing, strictly forbids behavioral profiling or commercial tracking of minors, guarantees revocation rights, and operates on a federated model without centralized raw data retention.
                   </p>
                 </div>
               </div>
@@ -602,7 +618,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('audit-log')}
                   className="px-5 py-3 bg-[#E31B23] hover:bg-[#C9131A] text-white font-condensed font-black uppercase tracking-wider text-sm transition-colors text-center cursor-pointer shadow-lg shadow-[#E31B23]/20"
                 >
-                  Verify Audit Ledger
+                  View Audit Ledger
                 </button>
                 <button
                   id="compliance-view-consent-btn"
@@ -614,49 +630,51 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               </div>
             </div>
 
-            {/* Statutory Badges */}
-            <div className="mt-8 pt-6 border-t border-[#202020] grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono-code text-[#C0C0C0]">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E31B23]" />
+            {/* Core Statutory Principles */}
+            <div className="mt-8 pt-6 border-t border-[#202020] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-[#C0C0C0]">
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#E31B23] shrink-0" />
                 <span>Verifiable Parental Consent (VPC)</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E31B23]" />
-                <span>Zero Targeted Profiling of Minors</span>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#E31B23] shrink-0" />
+                <span>No Commercial Profiling of Minors</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E31B23]" />
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#E31B23] shrink-0" />
                 <span>Purpose-Bound Time Expiry</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E31B23]" />
-                <span>Right to Erasure & Revocation</span>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#E31B23] shrink-0" />
+                <span>Right to Erasure &amp; Revocation</span>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* 6. INTERACTIVE DEMO SCREENS SHOWCASE: Quick launcher into the 5 screens */}
+      {/* 6. INTERACTIVE DEMO SCREENS SHOWCASE */}
       <section 
         id="demo-screens-section" 
         className="py-16 sm:py-24 bg-[#0D0D0D] border-b border-[#222222] relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           <div className="mb-12 pb-4 border-b border-[#222222] flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-3 h-3 bg-[#E31B23]"></span>
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  MULTI-STAKEHOLDER TESTBED
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  Platform Demonstration
                 </span>
               </div>
               <h2 className="font-condensed text-4xl sm:text-5xl font-black uppercase tracking-tight text-white">
-                5 INTERACTIVE DEMO SCREENS
+                5 Interactive Screens
               </h2>
             </div>
-            <p className="text-sm text-[#888888] max-w-md font-mono-code">
-              Explore the end-to-end data exchange loop across every institutional role.
+            <p className="text-sm text-[#888888] max-w-md">
+              Explore the end-to-end data exchange workflow across each institutional stakeholder role.
             </p>
           </div>
 
@@ -674,7 +692,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                       <div className="w-10 h-10 bg-[#0A0A0A] border border-[#2B2B2B] group-hover:border-[#E31B23] flex items-center justify-center transition-colors">
                         <Icon className="w-5 h-5 text-[#E31B23]" />
                       </div>
-                      <span className="px-2 py-0.5 bg-[#181818] border border-[#282828] text-[10px] font-mono-code text-[#E31B23] font-bold uppercase">
+                      <span className="px-2.5 py-0.5 bg-[#181818] border border-[#282828] text-xs text-[#E31B23] font-medium">
                         {item.badge}
                       </span>
                     </div>
@@ -682,8 +700,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     <h3 className="font-condensed text-2xl font-black uppercase tracking-wide text-white group-hover:text-[#E31B23] transition-colors">
                       {item.title}
                     </h3>
-                    <span className="text-xs font-mono-code text-[#888888] block mt-1">
-                      ROLE: {item.role}
+                    <span className="text-xs text-[#888888] block mt-1">
+                      Role: {item.role}
                     </span>
                     <p className="text-sm text-[#8E8E8E] leading-relaxed mt-3">
                       {item.description}
@@ -703,6 +721,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               );
             })}
           </div>
+
         </div>
       </section>
     </div>

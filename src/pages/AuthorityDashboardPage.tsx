@@ -316,24 +316,21 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
             <button
               id="back-to-home-btn"
               onClick={() => onNavigate('home')}
-              className="px-3 py-1.5 bg-[#141414] hover:bg-[#1E1E1E] text-[#A0A0A0] hover:text-white border border-[#2A2A2A] font-mono-code text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 bg-[#141414] hover:bg-[#1E1E1E] text-[#A0A0A0] hover:text-white border border-[#2A2A2A] text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-[#E31B23]" />
-              <span>EXIT TO PORTAL HOME</span>
+              <span>Exit to Portal Home</span>
             </button>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#E31B23] font-bold">COACH / STATE AUTHORITY DASHBOARD</span>
+            <span className="text-xs text-[#E31B23] font-bold uppercase tracking-wider">Coach &amp; Authority Dashboard</span>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#888888]">KHELO INDIA TALENT PIPELINE</span>
+            <span className="text-xs text-[#888888] uppercase tracking-wider">Talent Pipeline Analytics</span>
           </div>
 
-          <div className="flex items-center gap-3 font-mono-code text-xs text-[#888888]">
-            <span className="inline-flex items-center gap-1.5 text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>NODE: IN-NORTH-SAI-HUB</span>
-            </span>
+          <div className="flex items-center gap-3 text-xs text-[#888888]">
+            <span className="text-[#CCCCCC]">North Zone Center</span>
             <span className="text-[#333333]">|</span>
-            <span>DPDP ROLE SCOPED ACCESS</span>
+            <span>DPDP Role-Scoped Access</span>
           </div>
         </div>
 
@@ -343,33 +340,33 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
           {/* Stat Card 1: Total Athletes Tracked */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-[#E31B23] transition-colors">
             <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>TOTAL ATHLETES TRACKED</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Total Athletes Tracked</span>
               <Users className="w-4 h-4 text-[#888888] group-hover:text-[#E31B23] transition-colors" />
             </div>
             <div className="font-condensed text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
               18,492
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
+            <div className="mt-3 flex items-center justify-between text-[11px]">
               <span className="text-emerald-400 flex items-center gap-1">
                 ▲ +1,240 this month
               </span>
-              <span className="text-[#666666]">UDISE+ Linked</span>
+              <span className="text-[#777777]">UDISE+ Linked</span>
             </div>
           </div>
 
           {/* Stat Card 2: Flagged for State Review */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-[#E31B23] transition-colors">
             <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>FLAGGED FOR REVIEW</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Flagged For Review</span>
               <Flag className="w-4 h-4 text-[#E31B23]" />
             </div>
             <div className="font-condensed text-5xl sm:text-6xl font-black text-[#E31B23] tracking-tight leading-none">
               148
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
-              <span className="text-white font-bold">Top 5% National Tier</span>
+            <div className="mt-3 flex items-center justify-between text-[11px]">
+              <span className="text-white font-medium">Top 5% National Tier</span>
               <span className="text-amber-400">42 Trials Pending</span>
             </div>
           </div>
@@ -377,32 +374,32 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
           {/* Stat Card 3: Districts Covered */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-[#E31B23] transition-colors">
             <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>DISTRICTS COVERED</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Districts Covered</span>
               <MapPin className="w-4 h-4 text-[#888888] group-hover:text-[#E31B23] transition-colors" />
             </div>
             <div className="font-condensed text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
               28
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
+            <div className="mt-3 flex items-center justify-between text-[11px]">
               <span className="text-[#AAAAAA]">Punjab, Haryana &amp; NCR</span>
-              <span className="text-[#666666]">100% Geo-verified</span>
+              <span className="text-[#777777]">District Mapping</span>
             </div>
           </div>
 
           {/* Stat Card 4: Active NGOs & Academies */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-[#E31B23] transition-colors">
             <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>ACTIVE NGOS &amp; NODES</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Active NGOs &amp; Academies</span>
               <Building2 className="w-4 h-4 text-[#888888] group-hover:text-[#E31B23] transition-colors" />
             </div>
             <div className="font-condensed text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
               64
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
-              <span className="text-emerald-400">12 Grassroots Foundations</span>
-              <span className="text-[#666666]">52 Schools</span>
+            <div className="mt-3 flex items-center justify-between text-[11px]">
+              <span className="text-emerald-400">12 Foundations</span>
+              <span className="text-[#777777]">52 Schools</span>
             </div>
           </div>
 
@@ -417,16 +414,16 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 bg-[#E31B23]" />
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  LIVE RBAC SECURITY CONTROLLER // TOGGLE DEMO ROLE
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  Role-Based Access Control
                 </span>
               </div>
               <h2 className="font-condensed text-2xl sm:text-3xl font-black uppercase text-white tracking-wide">
-                Role-Based Access Control (RBAC) Simulator
+                Role-Based Access View Selector
               </h2>
-              <p className="text-xs font-mono-code text-[#999999] max-w-3xl leading-relaxed">
-                Demonstrating strict statutory privacy boundaries under DPDP Act 2023. Notice how switching between roles dynamically 
-                restricts or unlocks personal identifiable information (PII) versus anonymized macro-level demographic telemetry.
+              <p className="text-xs text-[#999999] max-w-3xl leading-relaxed">
+                Demonstrating strict statutory privacy boundaries under the DPDP Act 2023. Switching between roles dynamically 
+                restricts personal identifiable information (PII) versus anonymized macro-level demographic charts.
               </p>
             </div>
 
@@ -443,7 +440,7 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
               >
                 <Lock className="w-3.5 h-3.5" />
                 <span>State Authority View</span>
-                <span className="text-[10px] font-mono-code opacity-80">(Aggregate Only)</span>
+                <span className="text-[10px] opacity-80">(Aggregate Only)</span>
               </button>
 
               <button
@@ -457,31 +454,31 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
               >
                 <Unlock className="w-3.5 h-3.5" />
                 <span>Coach View</span>
-                <span className="text-[10px] font-mono-code opacity-80">(Consented Profiles)</span>
+                <span className="text-[10px] opacity-80">(Consented Profiles)</span>
               </button>
             </div>
           </div>
 
           {/* Active Mode Notice Banner */}
-          <div className="mt-5 pt-4 border-t border-[#1F1F1F] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono-code">
+          <div className="mt-5 pt-4 border-t border-[#1F1F1F] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
             {roleMode === 'state_authority' ? (
               <div className="flex items-center gap-2.5 text-amber-400">
                 <ShieldAlert className="w-4 h-4 shrink-0" />
                 <span>
-                  <strong>STATE AUTHORITY DIRECTIVE:</strong> Viewing anonymized macro charts &amp; district densities. Individual athlete names, photos, &amp; contact parameters are blinded by policy.
+                  <strong>State Authority Scope:</strong> Viewing anonymized macro charts and district densities. Individual athlete names and contact parameters are masked.
                 </span>
               </div>
             ) : (
               <div className="flex items-center gap-2.5 text-emerald-400">
                 <ShieldCheck className="w-4 h-4 shrink-0" />
                 <span>
-                  <strong>ACCREDITED COACH CLEARANCE:</strong> Consented athlete dossiers unlocked under Section 9 DPI authorization tokens for direct SAI national camp call-ups.
+                  <strong>Accredited Coach Clearance:</strong> Consented athlete dossiers displayed under verified Section 9 parental consent for national camp evaluations.
                 </span>
               </div>
             )}
 
-            <span className="text-[#666666] shrink-0 text-[11px]">
-              SECURITY AUDIT TOKEN: 0x9AF...41B (VALIDATED)
+            <span className="text-[#888888] shrink-0 text-[11px]">
+              DPDP Act Section 9 Verified
             </span>
           </div>
         </div>
@@ -502,15 +499,15 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <BarChart3 className="w-4 h-4 text-[#E31B23]" />
-                      <span className="text-xs font-mono-code uppercase text-[#E31B23] font-bold">
-                        REGIONAL BENCHMARK VOLUME
+                      <span className="text-xs uppercase text-[#E31B23] font-bold">
+                        Regional Benchmark Volume
                       </span>
                     </div>
                     <h3 className="font-condensed text-2xl font-black uppercase text-white">
                       District Athlete Enrollment &amp; Flagged Talent Density
                     </h3>
                   </div>
-                  <span className="text-[11px] font-mono-code text-[#777777]">PUNJAB &amp; NCR CLUSTER</span>
+                  <span className="text-[11px] text-[#777777]">Punjab &amp; NCR Cluster</span>
                 </div>
 
                 {/* Simple Bar Chart Component in the red/dark palette */}
@@ -560,22 +557,22 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <Trophy className="w-4 h-4 text-[#E31B23]" />
-                      <span className="text-xs font-mono-code uppercase text-[#E31B23] font-bold">
-                        SPORT DISCIPLINE SHARE
+                      <span className="text-xs uppercase text-[#E31B23] font-bold">
+                        Sport Discipline Share
                       </span>
                     </div>
                     <h3 className="font-condensed text-2xl font-black uppercase text-white">
                       Enrollment by Sport Discipline
                     </h3>
                   </div>
-                  <span className="text-[11px] font-mono-code text-[#777777]">ALL DISTRICTS</span>
+                  <span className="text-[11px] text-[#777777]">All Districts</span>
                 </div>
 
                 {/* Sport Distribution Bars */}
                 <div className="space-y-4 pt-2">
                   {SPORT_BREAKDOWN.map((item) => (
                     <div key={item.sport} className="space-y-1.5">
-                      <div className="flex items-center justify-between text-xs font-mono-code">
+                      <div className="flex items-center justify-between text-xs">
                         <span className="text-white font-bold">{item.sport}</span>
                         <span className="text-[#AAAAAA]">{item.count.toLocaleString()} athletes ({item.percentage}%)</span>
                       </div>
@@ -589,11 +586,11 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
                   ))}
                 </div>
 
-                <div className="p-4 bg-[#161616] border border-[#282828] space-y-2 text-xs font-mono-code">
-                  <span className="text-[#E31B23] font-bold block">GOVERNANCE STATUTE NOTE</span>
+                <div className="p-4 bg-[#161616] border border-[#282828] space-y-2 text-xs">
+                  <span className="text-[#E31B23] font-bold block uppercase tracking-wider text-[11px]">Governance Statute Note</span>
                   <p className="text-[#999999] leading-relaxed">
                     Under DPDP Act 2023 Sec 9, State Authorities may only access aggregate district counts to plan budget, equipment subsidies, 
-                    and coach staffing. Individual athlete contact records remain locked.
+                    and coach staffing. Individual athlete contact records remain protected.
                   </p>
                 </div>
               </div>
@@ -606,32 +603,32 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="w-2.5 h-2.5 bg-amber-400" />
-                    <span className="text-xs font-mono-code uppercase tracking-widest text-amber-400 font-bold">
-                      ANONYMIZED REGISTRY // ZERO PII EXPOSURE
+                    <span className="text-xs uppercase tracking-widest text-amber-400 font-bold">
+                      Anonymized Registry
                     </span>
                   </div>
                   <h3 className="font-condensed text-3xl font-black uppercase text-white">
                     State Talent Pipeline Cohort (Pseudonymized Tokens)
                   </h3>
                 </div>
-                <div className="px-3 py-1 bg-[#1A1A1A] border border-[#333333] text-xs font-mono-code text-[#AAAAAA] flex items-center gap-2">
+                <div className="px-3 py-1 bg-[#1A1A1A] border border-[#333333] text-xs text-[#AAAAAA] flex items-center gap-2">
                   <Lock className="w-3.5 h-3.5 text-[#E31B23]" />
                   <span>Switch to Coach View above to inspect names &amp; dossiers</span>
                 </div>
               </div>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs font-mono-code border-collapse">
+                <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="bg-[#0E0E0E] text-[#777777] border-b border-[#222222] uppercase">
-                      <th className="py-3 px-4">DOCKET REF</th>
-                      <th className="py-3 px-4">PSEUDONYMIZED TOKEN</th>
-                      <th className="py-3 px-4">SPORT</th>
-                      <th className="py-3 px-4">CATEGORY</th>
-                      <th className="py-3 px-4 text-right">BENCHMARK</th>
-                      <th className="py-3 px-4 text-center">PERCENTILE</th>
-                      <th className="py-3 px-4">DISTRICT NODE</th>
-                      <th className="py-3 px-4">DPDP STATUS</th>
+                    <tr className="bg-[#0E0E0E] text-[#888888] border-b border-[#222222] uppercase font-medium text-[11px]">
+                      <th className="py-3 px-4">Docket Ref</th>
+                      <th className="py-3 px-4">Pseudonymized Token</th>
+                      <th className="py-3 px-4">Sport</th>
+                      <th className="py-3 px-4">Category</th>
+                      <th className="py-3 px-4 text-right">Benchmark</th>
+                      <th className="py-3 px-4 text-center">Percentile</th>
+                      <th className="py-3 px-4">District</th>
+                      <th className="py-3 px-4">DPDP Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#1A1A1A]">
@@ -678,14 +675,14 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="w-2.5 h-2.5 bg-emerald-400" />
-                    <span className="text-xs font-mono-code uppercase tracking-widest text-emerald-400 font-bold">
-                      COACHING COCKPIT // INDIVIDUAL ATHLETE DOSSIERS
+                    <span className="text-xs uppercase tracking-widest text-emerald-400 font-bold">
+                      Individual Athlete Dossiers
                     </span>
                   </div>
                   <h3 className="font-condensed text-3xl font-black uppercase text-white tracking-wide">
                     Flagged &amp; Scouted Talent Review Ledger
                   </h3>
-                  <p className="text-xs font-mono-code text-[#888888]">
+                  <p className="text-xs text-[#888888]">
                     Full individual performance dossiers unlocked via verified Section 9 parental consents. Click any column header to sort.
                   </p>
                 </div>
@@ -699,14 +696,14 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
                       placeholder="Search athlete, docket, district..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-[#0A0A0A] border border-[#2C2C2C] focus:border-[#E31B23] text-white pl-8 pr-3 py-1.5 text-xs font-mono-code focus:outline-none"
+                      className="w-full bg-[#0A0A0A] border border-[#2C2C2C] focus:border-[#E31B23] text-white pl-8 pr-3 py-1.5 text-xs focus:outline-none"
                     />
                   </div>
 
                   <select
                     value={selectedSport}
                     onChange={(e) => setSelectedSport(e.target.value)}
-                    className="bg-[#0A0A0A] border border-[#2C2C2C] text-xs font-mono-code text-[#CCCCCC] px-3 py-1.5 focus:border-[#E31B23] focus:outline-none cursor-pointer"
+                    className="bg-[#0A0A0A] border border-[#2C2C2C] text-xs text-[#CCCCCC] px-3 py-1.5 focus:border-[#E31B23] focus:outline-none cursor-pointer"
                   >
                     <option value="ALL">All Sports</option>
                     <option value="Athletics">Athletics</option>
@@ -722,7 +719,7 @@ export const AuthorityDashboardPage: React.FC<ScreenProps> = ({ onNavigate }) =>
             {/* SORTABLE DATA TABLE OF FLAGGED / SCOUTED ATHLETES */}
             <div id="flagged-athletes-table-container" className="bg-[#121212] border-2 border-[#242424] overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs font-mono-code border-collapse">
+                <table className="w-full text-left text-xs border-collapse">
                   <thead>
                     <tr className="bg-[#0E0E0E] text-[#888888] border-b border-[#222222] uppercase select-none">
                       {/* Bib */}

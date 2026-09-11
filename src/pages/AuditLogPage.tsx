@@ -273,24 +273,21 @@ export const AuditLogPage: React.FC<ScreenProps> = ({ onNavigate }) => {
             <button
               id="back-to-home-btn"
               onClick={() => onNavigate('home')}
-              className="px-3 py-1.5 bg-[#141414] hover:bg-[#1E1E1E] text-[#A0A0A0] hover:text-white border border-[#2A2A2A] font-mono-code text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 bg-[#141414] hover:bg-[#1E1E1E] text-[#A0A0A0] hover:text-white border border-[#2A2A2A] text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-[#E31B23]" />
-              <span>EXIT TO PORTAL HOME</span>
+              <span>Exit to Portal Home</span>
             </button>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#E31B23] font-bold">IMMUTABLE AUDIT LOG</span>
+            <span className="text-xs text-[#E31B23] font-bold uppercase tracking-wider">Audit Log</span>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#888888]">DPDP SECTION 9 SURVEILLANCE &amp; DISCLOSURE TRAIL</span>
+            <span className="text-xs text-[#888888] uppercase tracking-wider">DPDP Section 9 Disclosure Trail</span>
           </div>
 
-          <div className="flex items-center gap-3 font-mono-code text-xs text-[#888888]">
-            <span className="inline-flex items-center gap-1.5 text-emerald-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>CHAIN ROOT: 0x9f88...41a</span>
-            </span>
+          <div className="flex items-center gap-3 text-xs text-[#888888]">
+            <span className="text-[#CCCCCC]">Compliance Journal</span>
             <span className="text-[#333333]">|</span>
-            <span className="text-white">WORM COMPLIANT STORAGE</span>
+            <span className="text-[#888888]">Append-Only Log Storage</span>
           </div>
         </div>
 
@@ -300,95 +297,95 @@ export const AuditLogPage: React.FC<ScreenProps> = ({ onNavigate }) => {
           {/* Stat Card 1: Total Accesses Today */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-[#E31B23] transition-colors">
             <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>TOTAL ACCESSES TODAY</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Total Accesses Today</span>
               <Clock className="w-4 h-4 text-[#888888] group-hover:text-[#E31B23] transition-colors" />
             </div>
             <div className="font-condensed text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
               1,428
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
+            <div className="mt-3 flex items-center justify-between text-[11px]">
               <span className="text-emerald-400 flex items-center gap-1">
                 ▲ +18% vs 7-day avg
               </span>
-              <span className="text-[#777777]">100% Cryptographically Signed</span>
+              <span className="text-[#777777]">Authorized Queries</span>
             </div>
           </div>
 
           {/* Stat Card 2: Flagged Anomalies Count (CRITICAL METRIC) */}
           <div className="relative bg-[#181112] border-2 border-[#E31B23] p-5 shadow-lg overflow-hidden group">
-            <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0 animate-pulse" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#E31B23] mb-2 uppercase font-bold">
-              <span>FLAGGED ANOMALIES</span>
+            <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
+            <div className="flex items-center justify-between text-xs text-[#E31B23] mb-2 uppercase font-bold">
+              <span>Flagged Anomalies</span>
               <ShieldAlert className="w-4 h-4 text-[#E31B23]" />
             </div>
             <div className="font-condensed text-5xl sm:text-6xl font-black text-[#E31B23] tracking-tight leading-none flex items-baseline gap-2">
               <span>{flaggedAnomaliesCount}</span>
-              <span className="text-xs font-mono-code text-white bg-[#E31B23] px-2 py-0.5 uppercase tracking-wider font-bold">
-                ACTION REQUIRED
+              <span className="text-[11px] text-white bg-[#E31B23] px-2 py-0.5 uppercase tracking-wider font-bold">
+                Review Required
               </span>
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
+            <div className="mt-3 flex items-center justify-between text-[11px]">
               <span className="text-amber-400">1 Bulk Scraping, 2 Policy Breaches</span>
-              <span className="text-[#AAAAAA]">Auto-mitigated</span>
+              <span className="text-[#888888]">Mitigated</span>
             </div>
           </div>
 
           {/* Stat Card 3: Most Active Organization */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-[#E31B23] transition-colors">
             <div className="h-1 w-full bg-[#E31B23] absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>MOST ACTIVE ORGANIZATION</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Most Active Organization</span>
               <Building2 className="w-4 h-4 text-[#888888] group-hover:text-[#E31B23] transition-colors" />
             </div>
             <div className="font-condensed text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight truncate">
               SAI (Central Hub)
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
-              <span className="text-white font-bold">642 queries today</span>
+            <div className="mt-3 flex items-center justify-between text-[11px]">
+              <span className="text-white font-medium">642 queries today</span>
               <span className="text-[#777777]">45% of total volume</span>
             </div>
           </div>
 
-          {/* Stat Card 4: Cryptographic Integrity */}
+          {/* Stat Card 4: Retention Policy */}
           <div className="relative bg-[#121212] border-2 border-[#262626] p-5 shadow-lg overflow-hidden group hover:border-emerald-500 transition-colors">
             <div className="h-1 w-full bg-emerald-500 absolute top-0 left-0" />
-            <div className="flex items-center justify-between text-xs font-mono-code text-[#777777] mb-2 uppercase">
-              <span>LEDGER MERKLE INTEGRITY</span>
+            <div className="flex items-center justify-between text-xs text-[#777777] mb-2 uppercase font-medium">
+              <span>Log Retention Mandate</span>
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
             </div>
-            <div className="font-condensed text-5xl sm:text-6xl font-black text-emerald-400 tracking-tight leading-none">
-              100%
+            <div className="font-condensed text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
+              7 Years
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-mono-code">
-              <span className="text-emerald-400">0 Tampering Detected</span>
-              <span className="text-[#777777]">SHA-256 Chained</span>
+            <div className="mt-3 flex items-center justify-between text-[11px]">
+              <span className="text-emerald-400">Statutory Archive Active</span>
+              <span className="text-[#777777]">DPDP Compliant</span>
             </div>
           </div>
 
         </div>
 
-        {/* CRYPTOGRAPHIC VERIFICATION TOAST */}
+        {/* VERIFICATION TOAST */}
         {chainVerifiedNotice && (
-          <div className="p-4 bg-[#112217] border-2 border-emerald-500 text-emerald-300 rounded-none flex items-center justify-between text-xs font-mono-code">
+          <div className="p-4 bg-[#112217] border-2 border-emerald-500 text-emerald-300 rounded-none flex items-center justify-between text-xs">
             <div className="flex items-center gap-2.5">
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
               <span>
-                <strong>MERKLE AUDIT CHAIN VERIFIED:</strong> All 1,428 block receipts cryptographically validated against Government of India root certificate. Zero mutations detected.
+                <strong>Audit Trail Verified:</strong> All 1,428 access entries cross-referenced against authorization certificates. No unauthorized mutations detected.
               </span>
             </div>
-            <span className="text-emerald-400 font-bold">PROOF REF: #0x99A...104</span>
+            <span className="text-emerald-400 font-medium">Status: Clean</span>
           </div>
         )}
 
         {/* EXPORT SUCCESS TOAST */}
         {exportSuccess && (
-          <div className="p-4 bg-[#141B2A] border-2 border-[#60A5FA] text-blue-200 text-xs font-mono-code flex items-center justify-between">
+          <div className="p-4 bg-[#141B2A] border-2 border-[#60A5FA] text-blue-200 text-xs flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Download className="w-4 h-4 text-blue-400" />
-              <span>Full compliance ledger exported with digital forensic signatures (audit_log_20260910.json).</span>
+              <span>Compliance ledger exported successfully (audit_log_20260910.csv).</span>
             </div>
-            <span className="text-blue-400 font-bold">DISPATCHED TO DPO VAULT</span>
+            <span className="text-blue-400 font-medium">Downloaded</span>
           </div>
         )}
 
@@ -441,10 +438,10 @@ export const AuditLogPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-[#666666]" />
               <input
                 type="text"
-                placeholder="Search org, coach, athlete, hash..."
+                placeholder="Search org, coach, athlete..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0A0A0A] border border-[#2C2C2C] focus:border-[#E31B23] text-white pl-8 pr-3 py-1.5 text-xs font-mono-code focus:outline-none"
+                className="w-full bg-[#0A0A0A] border border-[#2C2C2C] focus:border-[#E31B23] text-white pl-8 pr-3 py-1.5 text-xs focus:outline-none"
               />
             </div>
 
@@ -452,17 +449,17 @@ export const AuditLogPage: React.FC<ScreenProps> = ({ onNavigate }) => {
               id="verify-merkle-chain-btn"
               onClick={handleVerifyChain}
               disabled={isVerifyingChain}
-              className="px-3.5 py-1.5 bg-[#181818] hover:bg-[#222222] text-[#CCCCCC] hover:text-white border border-[#303030] text-xs font-mono-code flex items-center gap-1.5 transition-colors cursor-pointer"
-              title="Cryptographically verify SHA-256 Merkle chain"
+              className="px-3.5 py-1.5 bg-[#181818] hover:bg-[#222222] text-[#CCCCCC] hover:text-white border border-[#303030] text-xs flex items-center gap-1.5 transition-colors cursor-pointer font-medium"
+              title="Verify audit trail compliance"
             >
               <RefreshCw className={`w-3.5 h-3.5 text-[#E31B23] ${isVerifyingChain ? 'animate-spin' : ''}`} />
-              <span>{isVerifyingChain ? 'Verifying...' : 'Verify Merkle Root'}</span>
+              <span>{isVerifyingChain ? 'Verifying...' : 'Verify Audit Trail'}</span>
             </button>
 
             <button
               id="export-audit-btn"
               onClick={handleExportLedger}
-              className="px-3.5 py-1.5 bg-[#181818] hover:bg-[#222222] text-[#CCCCCC] hover:text-white border border-[#303030] text-xs font-mono-code flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 bg-[#181818] hover:bg-[#222222] text-[#CCCCCC] hover:text-white border border-[#303030] text-xs flex items-center gap-1.5 transition-colors cursor-pointer font-medium"
             >
               <Download className="w-3.5 h-3.5 text-[#888888]" />
               <span>Export CSV</span>
@@ -477,24 +474,24 @@ export const AuditLogPage: React.FC<ScreenProps> = ({ onNavigate }) => {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 bg-[#E31B23]" />
               <h3 className="font-condensed text-xl font-bold uppercase text-white tracking-wide">
-                Live Data Disclosure &amp; Consent Enforcement Stream
+                Data Disclosure &amp; Consent Enforcement Log
               </h3>
             </div>
-            <div className="text-xs font-mono-code text-[#888888] hidden sm:block">
-              SHOWING {filteredLogs.length} OF {logs.length} LOG EVENTS
+            <div className="text-xs text-[#888888] hidden sm:block">
+              Showing {filteredLogs.length} of {logs.length} Log Events
             </div>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs font-mono-code border-collapse">
+            <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="bg-[#0A0A0A] text-[#888888] border-b border-[#242424] uppercase select-none">
-                  <th className="py-3.5 px-4 w-36">TIMESTAMP</th>
-                  <th className="py-3.5 px-4">ACCESSING ORG &amp; ACTOR</th>
-                  <th className="py-3.5 px-4">ATHLETE / DATA ACCESSED</th>
-                  <th className="py-3.5 px-4">FIELD-LEVEL DETAIL (PULLED)</th>
-                  <th className="py-3.5 px-4">PURPOSE / STATUTE REF</th>
-                  <th className="py-3.5 px-4 text-right">AUDIT STATUS</th>
+                <tr className="bg-[#0A0A0A] text-[#888888] border-b border-[#242424] uppercase select-none font-medium text-[11px]">
+                  <th className="py-3.5 px-4 w-36">Timestamp</th>
+                  <th className="py-3.5 px-4">Accessing Org &amp; Actor</th>
+                  <th className="py-3.5 px-4">Athlete / Data Accessed</th>
+                  <th className="py-3.5 px-4">Field-Level Detail</th>
+                  <th className="py-3.5 px-4">Purpose / Statute</th>
+                  <th className="py-3.5 px-4 text-right">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#1F1F1F]">

@@ -323,27 +323,27 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
             <button
               id="back-to-home-btn"
               onClick={() => onNavigate('home')}
-              className="px-3 py-1.5 bg-[#141414] hover:bg-[#1E1E1E] text-[#A0A0A0] hover:text-white border border-[#2A2A2A] font-mono-code text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-3 py-1.5 bg-[#141414] hover:bg-[#1E1E1E] text-[#A0A0A0] hover:text-white border border-[#2A2A2A] text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5 text-[#E31B23]" />
-              <span>EXIT TO PORTAL HOME</span>
+              <span>Exit to Portal Home</span>
             </button>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#E31B23] font-bold">NGO SCOUTING VIEW</span>
+            <span className="text-xs text-[#E31B23] font-bold uppercase tracking-wider">NGO Scouting View</span>
             <span className="text-[#444444]">/</span>
-            <span className="font-mono-code text-xs text-[#888888]">AUTHORIZED CONSUMER (FIU)</span>
+            <span className="text-xs text-[#888888] uppercase tracking-wider">Authorized Consumer</span>
           </div>
 
-          <div className="flex items-center gap-3 font-mono-code text-xs">
+          <div className="flex items-center gap-3 text-xs">
             <span className="px-2.5 py-1 bg-[#161616] border border-[#2B2B2B] text-[#CCCCCC] flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#E31B23]" />
-              <strong className="text-white font-mono-code">{flaggedCount}</strong> ATHLETES FLAGGED
+              <strong className="text-white font-mono-code">{flaggedCount}</strong> Athletes Flagged
             </span>
             <button
               onClick={() => onNavigate('authority-dashboard')}
-              className="px-2.5 py-1 bg-[#E31B23]/15 hover:bg-[#E31B23]/25 text-[#E31B23] border border-[#E31B23]/30 text-xs font-mono-code transition-colors cursor-pointer flex items-center gap-1"
+              className="px-2.5 py-1 bg-[#E31B23]/15 hover:bg-[#E31B23]/25 text-[#E31B23] border border-[#E31B23]/30 text-xs transition-colors cursor-pointer flex items-center gap-1 font-medium"
             >
-              <span>GO TO AUTHORITY VIEW</span>
+              <span>Go to Authority View</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -362,25 +362,22 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                 <Lock className="w-4 h-4 text-[#E31B23]" />
               </div>
               <div className="space-y-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2 py-0.5 bg-[#E31B23] text-white text-[10px] font-mono-code font-bold uppercase tracking-wider">
-                    RBAC ENFORCED
-                  </span>
+                <div className="flex items-center gap-2">
                   <span className="font-condensed text-xl font-bold uppercase text-white tracking-wide">
                     Consented Profiles Visibility Guarantee
                   </span>
                 </div>
-                <p className="text-xs font-mono-code text-[#999999] leading-relaxed max-w-4xl">
-                  Under the USDX Governance Charter &amp; DPDP Act 2023 (Sec 9), only athlete profiles whose guardians have 
-                  explicitly granted affirmative consent for <strong className="text-[#CCCCCC]">“National &amp; State Scouting Visibility”</strong> are 
-                  decrypted in this view. Protected identifiers (Aadhaar, contact phone, residential address) remain tokenized until a formal trial invite is confirmed.
+                <p className="text-xs text-[#999999] leading-relaxed max-w-4xl">
+                  Under Section 9 of the DPDP Act 2023, only athlete profiles whose guardians have 
+                  explicitly granted affirmative consent for <strong className="text-[#CCCCCC]">“National &amp; State Scouting Visibility”</strong> appear in this portal. 
+                  Direct contact information remains protected until a formal trial invite is issued.
                 </p>
               </div>
             </div>
 
-            <div className="shrink-0 flex items-center gap-3 text-xs font-mono-code text-[#AAAAAA] bg-[#141414] px-3.5 py-2 border border-[#262626]">
+            <div className="shrink-0 flex items-center gap-2.5 text-xs text-[#CCCCCC] bg-[#141414] px-3.5 py-2 border border-[#262626]">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>TOKENIZED ANONYMIZATION: ACTIVE</span>
+              <span>Consent Verified Profiles</span>
             </div>
 
           </div>
@@ -391,16 +388,16 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
           <div className="p-4 bg-[#141414] border-l-4 border-l-[#E31B23] border border-[#2B2B2B] flex items-center justify-between gap-4 animate-fadeIn">
             <div className="flex items-center gap-3">
               <CheckCircle2 className="w-5 h-5 text-[#E31B23]" />
-              <div className="text-xs font-mono-code">
+              <div className="text-xs">
                 <span className="text-white font-bold">{notificationToast.athleteName}:</span>{' '}
                 <span className="text-[#CCCCCC]">{notificationToast.message}</span>
               </div>
             </div>
             <button
               onClick={() => setNotificationToast(null)}
-              className="text-xs font-mono-code text-[#888888] hover:text-white px-2 py-1"
+              className="text-xs text-[#888888] hover:text-white px-2 py-1"
             >
-              DISMISS
+              Dismiss
             </button>
           </div>
         )}
@@ -411,8 +408,8 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-2.5 h-2.5 bg-[#E31B23]" />
-                <span className="text-xs font-mono-code uppercase tracking-widest text-[#E31B23] font-bold">
-                  SCOUTING QUERY ENGINE
+                <span className="text-xs uppercase tracking-widest text-[#E31B23] font-bold">
+                  Talent Search Filters
                 </span>
               </div>
               <h2 className="font-condensed text-2xl sm:text-3xl font-black uppercase tracking-wide text-white">
@@ -428,7 +425,7 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                 placeholder="Search athlete, sport, or school..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0A0A0A] border border-[#2E2E2E] focus:border-[#E31B23] text-white pl-9 pr-3.5 py-2 text-xs font-mono-code focus:outline-none"
+                className="w-full bg-[#0A0A0A] border border-[#2E2E2E] focus:border-[#E31B23] text-white pl-9 pr-3.5 py-2 text-xs focus:outline-none"
               />
             </div>
           </div>
@@ -437,8 +434,8 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
           <div className="space-y-4 pt-4 border-t border-[#1E1E1E]">
             {/* Sport Pill Filter */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-              <span className="text-xs font-mono-code uppercase text-[#888888] w-24 shrink-0">
-                SPORT:
+              <span className="text-xs uppercase font-medium text-[#888888] w-24 shrink-0">
+                Sport:
               </span>
               <div className="flex flex-wrap gap-2">
                 {sports.map((sport) => {
@@ -448,7 +445,7 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                       key={sport}
                       id={`filter-sport-${sport.toLowerCase()}`}
                       onClick={() => setSelectedSport(sport)}
-                      className={`px-3 py-1.5 text-xs font-mono-code font-bold uppercase transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                         isActive
                           ? 'bg-[#E31B23] text-white shadow-md shadow-[#E31B23]/25 border border-[#E31B23]'
                           : 'bg-[#181818] text-[#999999] hover:text-white border border-[#2B2B2B] hover:border-[#444444]'
@@ -463,8 +460,8 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
 
             {/* Region/District Pill Filter */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-              <span className="text-xs font-mono-code uppercase text-[#888888] w-24 shrink-0">
-                REGION:
+              <span className="text-xs uppercase font-medium text-[#888888] w-24 shrink-0">
+                Region:
               </span>
               <div className="flex flex-wrap gap-2">
                 {regions.map((region) => {
@@ -474,7 +471,7 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                       key={region}
                       id={`filter-region-${region.toLowerCase().replace(/\s+/g, '-')}`}
                       onClick={() => setSelectedRegion(region)}
-                      className={`px-3 py-1.5 text-xs font-mono-code font-bold uppercase transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                         isActive
                           ? 'bg-[#E31B23] text-white shadow-md shadow-[#E31B23]/25 border border-[#E31B23]'
                           : 'bg-[#181818] text-[#999999] hover:text-white border border-[#2B2B2B] hover:border-[#444444]'
@@ -489,8 +486,8 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
 
             {/* Age Group Pill Filter */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-              <span className="text-xs font-mono-code uppercase text-[#888888] w-24 shrink-0">
-                AGE GROUP:
+              <span className="text-xs uppercase font-medium text-[#888888] w-24 shrink-0">
+                Age Group:
               </span>
               <div className="flex flex-wrap gap-2">
                 {ageGroups.map((ageGroup) => {
@@ -500,7 +497,7 @@ export const NgoScoutingPage: React.FC<ScreenProps> = ({ onNavigate }) => {
                       key={ageGroup}
                       id={`filter-age-${ageGroup.toLowerCase()}`}
                       onClick={() => setSelectedAgeGroup(ageGroup)}
-                      className={`px-3 py-1.5 text-xs font-mono-code font-bold uppercase transition-all cursor-pointer ${
+                      className={`px-3 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                         isActive
                           ? 'bg-[#E31B23] text-white shadow-md shadow-[#E31B23]/25 border border-[#E31B23]'
                           : 'bg-[#181818] text-[#999999] hover:text-white border border-[#2B2B2B] hover:border-[#444444]'
